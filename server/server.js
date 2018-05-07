@@ -21,18 +21,28 @@ app.post('/todos', (req, res) => {
 	});
 });
 
-app.post('/users', (req, res) => {
-	var user = new User({
-		email: req.body.email
-	});
+//post URLs
+// app.post('/users', (req, res) => {
+// 	var user = new User({
+// 		email: req.body.email
+// 	});
+// 	user.save().then((doc) => {
+// 		res.send(doc);
+// 	}, (e) => {
+// 		res.send(e);
+// 	});
+// });
 
-	user.save().then((doc) => {
-		res.send(doc);
+app.get('/todos', (req, res) => {
+	Todo.find().then((todos) => {
+		res.send({todos});
 	}, (e) => {
-		res.send(e);
+		res.status(400).send(e);
 	});
-});
+})
 
 app.listen(3000, () => {
 	console.log('Started on port 3000');
-})
+});
+
+module.exports = {app};
