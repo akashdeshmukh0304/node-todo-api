@@ -56,10 +56,9 @@ app.get('/todos/:id', (req, res) => {
 			return res.status(404).send({
 				error: 'No data found'
 			});
-		} else {
-			res.status(200).send({todo});
 		}
-	}, (e) => res.status(400).send());
+		res.send({todo});
+	}).catch((e) => res.status(400).send());
 });
 
 app.listen(3000, () => {
