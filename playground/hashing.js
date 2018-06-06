@@ -8,7 +8,7 @@ var data = {
 var token = jwt.sign(data , 'Imnumbe4');
 console.log(token);
 
-var decoded = jwt.verify(token + '1',  'Imnumbe4');
+var decoded = jwt.verify(token,  'Imnumbe4');
 console.log(decoded);
 
 // var message = 'I am number 3';
