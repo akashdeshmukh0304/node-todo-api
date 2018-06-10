@@ -10,10 +10,10 @@ bcrypt.genSalt(10, (err, salt) => {
 	});
 });
 
-// var hashedPassword = '$2a$10$S8SG7OOLhB0IIVib4ad38.J6XXLgamko0aa74ECI5TVtojydbDtsS';
-// bcrypt.compare('sdvds', hashedPassword, (err, res) => {
-// 	console.log(res);
-// });
+var hashedPassword = '$2a$10$S8SG7OOLhB0IIVib4ad38.J6XXLgamko0aa74ECI5TVtojydbDtsS';
+bcrypt.compare('sdvds', hashedPassword, (err, res) => {
+	console.log(res);
+});
 
 // var data = {
 // 	id: 10
