@@ -14,11 +14,17 @@ const users = [{
 	tokens: [{
 		access: 'auth',
 		token: jwt.sign({_id: userOneId, access: 'auth'}, 'abc123').toString()
-	}]
+	}],
+	_creator: userOneId
 }, {
 	_id: userTwoId,
 	email: 'akash@someone.com',
-	password: 'userTwoPass'
+	password: 'userTwoPass',
+	_creator: userTwoId,
+	tokens: [{
+		access: 'auth',
+		token: jwt.sign({_id: userTwoId, access: 'auth'}, 'abc123').toString()
+	}],
 }];
 
 const todos = [{
